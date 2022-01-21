@@ -7,4 +7,4 @@
   React by default calls the render function. You have to write the return keyword and all the things you want to return inside it.
 
 - props
-  To get props in a class component you have to use --this.props--
+  To get props in a class component you have to use **this.props**
