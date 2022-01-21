@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+// in react each functions are components and
+// everything inside return is react element
+/* function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello world{new Date().toLocaleTimeString("bn-BD")}
     </div>
   );
+} */
+
+class App {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
 }
 
 export default App;
