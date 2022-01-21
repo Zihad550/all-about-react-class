@@ -8,15 +8,11 @@
   );
 } */
 
-class App {
-  constructor(name, year) {
-    this.name = name;
-    this.year = year;
-  }
-  age() {
-    let date = new Date();
-    return date.getFullYear() - this.year;
-  }
-}
+import Clock from "./components/Clock";
+
+const App = () => {
+  // if you change locale="en-US" then clock will change its layout
+  return <Clock locale="bn-BD" />;
+};
 
 export default App;
