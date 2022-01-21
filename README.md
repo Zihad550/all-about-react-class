@@ -9,9 +9,11 @@
   stateName: newValue;
   })
   or,\
+
   setState((state, props) => {
   stateName: state + props;
   })
+
 - About componentDidMount():
   It gets called when the component is fully loaded on the webpage.
 
