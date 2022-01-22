@@ -1,15 +1,3 @@
-# Lesson-5 , "form handling"
+# Lesson-6 , "Lifting State Up"
 
-- Check the Form component for form handling.
-- on React textarea works like input field you have to give value. Instead of writing everything between the opening and closing tag.
-
-```
-// on html
- <textarea > This where we give text area value </textarea>
-
-// on React
- <textarea value="this is where we give the value" />
-
-```
-
-- for input type checkbox use e.target.checked to change the value.
+- What is Lifting State Up:\When we need a common state to be shared with two or more component then we have to lift the state to their parents. The component which contains them. Lifting the state from the child to parent component so all the child component can use them is called **lifting state up** on react.
