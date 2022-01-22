@@ -27,8 +27,6 @@ class Clock extends React.Component {
     });
   };
 
-  printFrameworks() {}
-
   //todo: this will be called when the component will unmount, When the componet  will unmount
   componentWillUnmount() {
     clearInterval(this.clockTimer);
@@ -36,19 +34,16 @@ class Clock extends React.Component {
 
   render() {
     //todo: to use state
-    console.log("clock component rendered");
     const { date, locale } = this.state;
     return (
       <>
         <h1>{date.toLocaleTimeString(locale)}</h1>
-        {/* here bind method always creates a new function thats why our components re-renders thats why it gives new props at the button component and the button component re-renders 
-        // * To solve this
-        //* best practice:
-       1. declare the function into arrow function
-        2. pass  them like parameters
-        */}
-        {/* <Button change={this.handleClick.bind(this, "en-US")} /> */}
-        <Button change={this.handleClick} locale="en-US" />
+
+        {locale === "bn-BD" ? (
+          <Button change={this.handleClick} locale="en-US" />
+        ) : (
+          <Button change={this.handleClick} locale="bn-BD" />
+        )}
       </>
     );
   }

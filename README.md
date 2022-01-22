@@ -1,12 +1,15 @@
-# Lesson -4
+# Lesson-5 , "form handling"
 
-- shouldComponentUpdate(): It is called when the component is gonna re-render. Before the re-render of a component it is fired . It is react life cycle hook. It receives two props, shouldComponentUpdate(nextProps, nextState){}
+- Check the Form component for form handling.
+- on React textarea works like input field you have to give value. Instead of writing everything between the opening and closing tag.
 
 ```
-// if we return true from the shouldComponentUpdate() hook then the component will re-render
-// if we return false from the shouldComponentUpdate() hook then the component will not re-render
+// on html
+ <textarea > This where we give text area value </textarea>
+
+// on React
+ <textarea value="this is where we give the value" />
+
 ```
 
-- Don't use shouldComponentUpdate() lifecycle hook in every component even don't use it on medium sized components.
-
-- Here it is used to lesson purpose.
+- for input type checkbox use e.target.checked to change the value.
