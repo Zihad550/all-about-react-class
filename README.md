@@ -1,13 +1,13 @@
 # Lesson - 3
 
-- this keyword: Normal function changes the this keyword in a callback function. But arrow function does not changes the this keyword. \
+- this keyword: Normal function changes the this keyword in a callback function. But arrow function does not changes the this keyword.
 
   - [this keyword in Bangla](https://www.youtube.com/watch?v=uZqyRJkTQog)
   - [About Arrow function and this keyword in arrow function](https://www.youtube.com/watch?v=UwrmEUCaAIY)
   - [JavaScript Prototype Inheritance & ES6 class](https://www.youtube.com/watch?v=93Styj1K9fY) \
 
 - To solve this confusion on function:
-  You can use arrow function because they don't update the this keyword. You can use bind after the function. Or simply store this into a function and call the function. \
+  You can use arrow function because they don't update the this keyword. You can use bind after the function. Or simply store this into a function and call the function.
   Examples:
 
   - ```
