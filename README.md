@@ -1,21 +1,53 @@
-# React Class Component
+# Lesson - 3
 
-- how to declare state on a class component:
-  state is a object which stores information about the component. When the setState() is called only then the component reRenders
-  this.state={}
+- this keyword: Normal function changes the this keyword in a callback function. But arrow function does not changes the this keyword. \
 
-- how to update state:
-  setState({
-  stateName: newValue;
-  })
-  or,\
+  - [this keyword in Bangla](https://www.youtube.com/watch?v=uZqyRJkTQog)
+  - [About Arrow function and this keyword in arrow function](https://www.youtube.com/watch?v=UwrmEUCaAIY) -[JavaScript Prototype Inheritance & ES6 class](https://www.youtube.com/watch?v=93Styj1K9fY) \
 
-  setState((state, props) => {
-  stateName: state + props;
-  })
+- To solve this confusion on function:
+  You can use arrow function because they don't update the this keyword. You can use bind after the function. Or simply store this into a function and call the function. \
+  Examples:
 
-- About componentDidMount():
-  It gets called when the component is fully loaded on the webpage.
+  - ```
+    // first step you can store the this key word in a variable
+      const javascript = {
+        name: "JavaScript",
+        libraries: ["React", "Vue", "Angular"],
+        printLibraries: function(){
 
-- About componentWillUnmount():
-  It gets called when the component will unmount. Or the user will switch route.
+          let self = this;
+          this.libraries.forEach(function(library){
+            console.log(`${self.name} loves ${library}`)
+          })
+        }
+      }
+    ```
+
+  - ```
+    // you can use the bind() method to solve this problem
+      const javascript = {
+        name: "JavaScript",
+        libraries: ["React", "Vue", "Angular"],
+        printLibraries: function(){
+
+          this.libraries.forEach(function(library){
+            console.log(`${self.name} loves ${library}`)
+          }.bind(this))
+        }
+      }
+    ```
+
+  - ```
+    // you can simply use the arrow function to solve this
+      const javascript = {
+        name: "JavaScript",
+        libraries: ["React", "Vue", "Angular"],
+        printLibraries: function(){
+
+          this.libraries.forEach(library => {
+            console.log(`${this.name} loves ${library}`)
+          })
+        }
+      }
+    ```
