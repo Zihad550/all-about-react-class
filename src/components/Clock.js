@@ -1,10 +1,10 @@
 import React from "react";
+import Button from "./Button";
 
 class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date(), locale: "bn-BD" };
-    // this.handleClick = this.handleClick.bind(this);
   }
 
   //todo: will update the state when the page is fully loaded
@@ -20,33 +20,12 @@ class Clock extends React.Component {
     });
   }
 
-  //! the function is referenced with the onClick event. When the event is triggered it is called but here this is undefined
-  /* handleClick() {
-    
-    this.setState({
-      locale: "en-US",
-    });
-  } 
-  */
-
-  //todo:1 to solve this you can simply make the function into a a arrow function. Because arrow function does not modifies the this keyword.
-  // * It is the best practice
+  //todo: updates the clock style
   handleClick = (locale) => {
     this.setState({
       locale,
     });
   };
-
-  //todo:2 you can use bind() method. To do this you have to write the bind method into the constructor.
-  /* 
-  handleClick(){
-    this.setState({
-      locale: "en-US",
-    });
-  } 
-  */
-
-  // todo: 3 you can use bind() with the onClick event and you can even pass parameters with it.
 
   printFrameworks() {}
 
@@ -57,20 +36,19 @@ class Clock extends React.Component {
 
   render() {
     //todo: to use state
+    console.log("clock component rendered");
     const { date, locale } = this.state;
     return (
       <>
         <h1>{date.toLocaleTimeString(locale)}</h1>
-        {/* to pass parameters on a onClick event 
-          1. you can use the bind() method
-          //* 2. you can use arrow function like the functional components. It is the best practice.
+        {/* here bind method always creates a new function thats why our components re-renders thats why it gives new props at the button component and the button component re-renders 
+        // * To solve this
+        //* best practice:
+       1. declare the function into arrow function
+        2. pass  them like parameters
         */}
-        {/* 1.  <button type="button" onClick={this.handleClick.bind(this, "en-US")}> */}
-
-        {/* 2.  */}
-        <button type="button" onClick={() => this.handleClick("en-US")}>
-          Click
-        </button>
+        {/* <Button change={this.handleClick.bind(this, "en-US")} /> */}
+        <Button change={this.handleClick} locale="en-US" />
       </>
     );
   }
