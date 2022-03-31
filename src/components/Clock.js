@@ -3,7 +3,11 @@ import React from "react";
 //* clock is the base class
 class Clock extends React.Component {
   //** state is a simple javascript object that works like a database you can save information of the component into it
-
+/* 
+  constructor(props){
+    super(props);
+    this.state = {data: new Date()};
+  } */
   //todo: when you dont need the prop to initialize the state then you don't have to call the constructor and super
   // you can declare the state in this short form
   //
